@@ -1,0 +1,6 @@
+[submodule "Carthage/Checkouts/Base32"]
+	url = https://github.com/norio-nomura/Base32.git
+	path = Carthage/Checkouts/Base32
+[submodule "Carthage/Checkouts/NestedFramework"]
+	path = Carthage/Checkouts/NestedFramework
+	url = https://github.com/norio-nomura/NestedFramework.git

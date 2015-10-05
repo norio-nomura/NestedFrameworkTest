@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9052" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9040"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9016"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOSApp" customModuleProvider="target">
+                    <items>
+                        <slider width="1" alignment="left" maximum="100" steps="10" id="9Gi-6N-p2M">
+                            <connections>
+                                <action selector="sliderChanged:" destination="AgC-eL-Hgc" id="m4n-Rf-6Yd"/>
+                            </connections>
+                        </slider>
+                        <button width="1" alignment="left" title="Value &amp; Base32" id="qS4-Bl-GFW">
+                            <connections>
+                                <segue destination="JRI-hG-CCR" kind="push" identifier="base32" id="aVs-b8-OUa"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="slider" destination="9Gi-6N-p2M" id="lIp-67-g7B"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--base32-->
+        <scene sceneID="tTv-79-FLz">
+            <objects>
+                <controller identifier="base32" title="base32" id="JRI-hG-CCR" customClass="Base32InterfaceController" customModule="watchOSApp_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="E5y-IA-EHV"/>
+                        <label alignment="left" text="base32" id="37V-VL-6HT"/>
+                    </items>
+                    <connections>
+                        <outlet property="base32Label" destination="37V-VL-6HT" id="hIu-go-t3W"/>
+                        <outlet property="valueLabel" destination="E5y-IA-EHV" id="dLj-2c-9rp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="watchOSApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
